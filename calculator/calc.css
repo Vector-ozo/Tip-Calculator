@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+  --transition: all 0.3s ease;
+  --scale: scale(1.1);
+  --strong-cyan: hsl(172, 67%, 45%);
+  --font-input-size: 20px;
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'space mono', monospace;
+  background-color: var(--light-grayish-cyan);
+}
+
+header{
+  text-align: center;
+  margin-top: 10rem;
+  color: var(--very-dark-cyan);
+  text-transform: uppercase;
+  letter-spacing: .5rem
+}
+
+input{
+  text-align: right;
+  outline: 2px solid var(--strong-cyan);
+}
+
+.attribution{
+  margin-top: 3rem;
+}
+
+.calculator{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  column-gap: 2.5rem;
+  align-items: flex-start;
+  background-color: var(--color-white);
+  margin-top: 4.5rem;
+  padding: 2rem;
+  border: none;
+  border-radius: .75rem;
+  box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.2);
+}
+
+.first-section, .second-section{
+  width: 50%;
+  transition: var(--transition);
+}
+
+.section-header{
+  margin-bottom: .75rem;
+  text-transform: capitalize;
+  font-size: 14px;
+ color: var(--dark-grayish-cyan);
+}
+
+.bill-input, .people-input{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--very-light-grayish-cyan);
+  padding: .15rem .25rem;
+  color: var(--dark-grayish-cyan);
+  border: 1px solid var(--strong-cyan);
+}
+
+.bill-input:active, .people-input:active{
+  color: var(--very-dark-cyan);
+}
+
+.dollar-input, .person-input{
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: var(--very-light-grayish-cyan);
+}
+
+/*.input img{
+  position: absolute;
+  top: 0;
+  left: .5rem;
+}*/
+
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button-header{
+ margin-top: 2rem;
+ color: var(--dark-grayish-cyan);
+ font-size: 14px;
+}
+
+.button{
+  padding: .5rem;
+  color: var(--color-white);
+  border: none;
+  border-radius: .25rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: var(--font-input-size);
+  background-color: var(--very-dark-cyan);
+}
+
+.button:active{
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+#button-custom{
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+  text-align: center;
+}
+
+.second-section{
+  border: none;
+  border-radius: .75rem;
+  padding: 1.5rem;
+  background-color: var(--very-dark-cyan);
+}
+
+.section-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.section-flex:first-child{
+  margin-bottom: 3rem;
+}
+
+#total{
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--strong-cyan);
+}
+
+.section-info{
+  font-size: 12px;
+  display: block;
+}
+
+.section-info p:last-child{
+  color: var(--dark-grayish-cyan);
+}
+.section-info p:first-child{
+  color: var(--color-white);
+  text-transform: capitalize;
+}
+
+.reset-button{
+  width: 100%;
+  padding: .75rem 0;
+  margin-top: 7rem;
+  border: none;
+  border-radius: .25rem;
+  background-color: var(--dark-grayish-cyan);
+  color: var(--very-dark-cyan);
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 700;
+}
+.danger{
+  border: 2px solid red;
+  color: red
+}
+
+.reset-button:active{
+  background-color: var(--strong-cyan);
+}
+
+
+@media screen and (max-width: 750px){
+  .calculator{
+    flex-direction: column;
+    width: 100%;
+    gap: 3rem;
+    border-radius: 1.5rem;
+  }
+  .first-section, .second-section{
+    width: 100%;
+  }
+  
+  .section-flex:first-child{
+    margin-bottom: 2rem;
+  }
+  
+  .reset-button{
+    margin-top: 2rem;
+  }
+  .buttons{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
